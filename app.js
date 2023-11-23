@@ -53,7 +53,7 @@ function CardCheck(num) {
             let cardTwo = document.querySelector(`.c-${moveArray[1].index + 1}`)
             array[moveArray[0].index] = ""
             array[moveArray[1].index] = ""
-            let result = cardsArray.some((element) => {
+            let result = array.some((element) => {
                 return (element !== "")
             })
             if (result === false) {
