@@ -61,6 +61,7 @@ function CardCheck(num) {
                 let WinPage = document.createElement("div")
                 let heading = document.createElement("h1")
                 let btn = document.createElement("button")
+                WinPage.className="win"
                 btn.innerHTML = "Play Again"
                 heading.innerHTML = "YOU WIN"
                 WinPage.appendChild(heading)
