@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(106, 0, 255);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 800px;
+}
+
+.main h1 {
+    font-size: 50px;
+}
+
+.cards {
+    background-color: white;
+    padding: 28.5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    transform: rotateY(360deg);
+    margin: 14.5px;
+    height: 150px;
+    width: 150px;
+}
+
+.front {
+    position: absolute;
+    width: 150px;
+    backface-visibility: hidden;
+    height: 150px;
+    display: flex;
+    background-color: rgb(106, 0, 255);
+    justify-content: center;
+    align-items: center;
+}
+
+.front i,
+.back i {
+    font-size: 80px;
+    color: white;
+}
+
+.back {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: transform 2S;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(8px);
+    }
+
+    20% {
+        transform: translateX(-8px);
+    }
+
+    40% {
+        transform: translateX(8px);
+    }
+
+    60% {
+        transform: translateX(-8px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+
+    100% {
+        transform: translateX(-8px);
+    }
+}
+
+.shake {
+    animation: shake 0.35s;
+}
+
+.win {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 30%;
+    height: 40%;
+    left: 30%;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.win h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.win button {
+    width: 30%;
+    height: 20%;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+
+}
