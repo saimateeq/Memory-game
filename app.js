@@ -37,7 +37,9 @@ function move(num) {
     let back = document.querySelector(`.b-${num}`)
     back.setAttribute(`style`, `transform:rotateY(0deg); transition: transform 1.2s;`)
     front.setAttribute(`style`, `transform:rotateY(-180deg); transition: transform 1.2s;`)
-    setTimeout(CardCheck, 1500, num)
+    if (array[num - 1] !== "") {
+        setTimeout(CardCheck, 1000, num)
+    }
 }
 function CardCheck(num) {
     if (moveArray[0].value === "") {
@@ -49,9 +51,8 @@ function CardCheck(num) {
         if (moveArray[0].value === moveArray[1].value && moveArray[0].index !== moveArray[1].index) {
             let cardOne = document.querySelector(`.c-${moveArray[0].index + 1}`)
             let cardTwo = document.querySelector(`.c-${moveArray[1].index + 1}`)
-            ntListener("click", move(moveArray[1].index + 1))
-            cardsArray[moveArray[0].index] = ""
-            cardsArray[moveArray[1].index] = ""
+            array[moveArray[0].index] = ""
+            array[moveArray[1].index] = ""
             let result = cardsArray.some((element) => {
                 return (element !== "")
             })
